@@ -39,7 +39,7 @@ function makeSound(key) {
       crash.play();
       break;
     case "j":
-      var kick = new Audio("sounds/kadal_en_kaviye.mp4");
+      var kick = new Audio("kick-bass.mp3");
       kick.play();
       break;
     default:
