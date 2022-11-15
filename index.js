@@ -4,10 +4,12 @@ for (var i = 0; i < noOfBut; i++) {
   document.querySelectorAll("button")[i].addEventListener("click", function(){
     var key=this.innerHTML;
     makeSound(key);
+    doAnimation(key);
   });
 }
 document.addEventListener("keydown",function(event){
   makeSound(event.key);
+  doAnimation(event.key);
 });
 function makeSound(key) {
   switch (key) {
@@ -37,7 +39,7 @@ function makeSound(key) {
       crash.play();
       break;
     case "j":
-      var kick = new Audio("sounds/kick-bass.mp3");
+      var kick = new Audio("sounds/kadal_en_kaviye.mp4");
       kick.play();
       break;
     default:
@@ -45,4 +47,12 @@ function makeSound(key) {
 
   }
 
+}
+function doAnimation(key){
+  var activeButton=document.querySelector("."+key);
+  activeButton.classList.add("pressed");
+  setTimeout(function(){
+    activeButton.classList.remove("pressed");
+
+  },100);
 }
